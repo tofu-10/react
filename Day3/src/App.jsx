@@ -26,15 +26,10 @@ function App() {
           rollno={10}
           classes={"csit"}
         />
-        
       </div>
-      <div>
-        <Counterer/>
+      <div className="hello">
+        <Counterer />
       </div>
-      
-      
-
-      
     </>
   );
 }
