@@ -8,16 +8,23 @@ export function Basic() {
         { id: 3, text: "Read Clean Code", complete: false },
         { id: 4, text: "Walk the dog", complete: false },
     ];
-
+    
     const [hideCompleted, setHideCompleted] = useState(false);
 
     function handleHideChange(e) {
         setHideCompleted(e.target.checked);
     }
 
+    const [search, setSearch] = useState("");
+
     return (
         <>
-            <input type="text" />
+            <input
+                type="text"
+                placeholder="Search todos"
+            value={search}
+                onChange={e => setSearch(e.target.value)}
+            />
             <br />
             <input
                 type="checkbox"
@@ -27,8 +34,11 @@ export function Basic() {
             <span>Hide Completed</span>
             <ul>
                 {object
-                    .filter((item) => !hideCompleted || !item.complete)
-                    .map((item) => (
+                    .filter(item =>
+                        (!hideCompleted || !item.complete) &&
+                        item.text.toLowerCase().includes(search.toLowerCase())
+                    )
+                    .map(item => (
                         <li key={item.id}>
                             <span>
                                 {item.text}

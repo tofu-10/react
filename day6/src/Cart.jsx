@@ -78,22 +78,34 @@ const Things = [
   },
 ];
 
-import { useState } from 'react';
+import { useState } from "react";
 
 export function Product() {
-    const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  // Filter items based on selected category
 
-    // Filter items based on selected category
-   
+  const [selectedText, setText] = useState("");
 
-    const handleCategoryChange = (e) => {
-        setSelectedCategory(e.target.value);
-    };
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
 
-    return (
-      <>
-      <div id='selectionDiv'>
-        
+  const handleSearch = (value) => {
+    setText(value);
+  };
+
+  var filteredText =
+    selectedCategory === "all"
+      ? Things
+      : Things.filter((item) => item.category === selectedCategory);
+
+  const bubu = filteredText.filter((item) =>
+    item.Name.toLowerCase().includes(selectedText.toLowerCase())
+  ); 
+
+  return (
+    <>
+      <div id="selectionDiv">
         <label htmlFor="selection">Select The Category to view items : </label>
         <select
           name="Sort"
@@ -107,22 +119,31 @@ export function Product() {
           <option value="meat">Meat</option>
           <option value="cpu">CPUs</option>
         </select>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="input"
+          placeholder="gu kha"
+          value={selectedText}
+          onChange={(e) => handleSearch(e.target.value)}
+        />
+      </div>
+
+      <div className="Totalbox">
+        {(selectedText ? bubu : filteredText).map((item) => (
+          <div key={item.id} className="eachBorder">
+            <div className="image">
+              <img src={item.image} alt={item.Name} />
             </div>
-        <div className="Totalbox">
-          {(selectedCategory === "all" ? Things : Things.filter((item) => item.category === selectedCategory)
-          ).map((item) => (
-            <div key={item.id} className="eachBorder">
-              <div className="image">
-                <img src={item.image} alt={item.Name} />
-              </div>
-              <br />
-              Item: {item.Name}{" "}
-              <br />
-              <br />
-              Price: {item.price}{" "}
-            </div>
-          ))}
-        </div>
-      </>
-    );
+            <br />
+            Item: {item.Name} <br />
+            <br />
+            Price: {item.price}{" "}
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
