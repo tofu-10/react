@@ -1,23 +1,26 @@
-*{
+* {
   background-color: rgb(33, 31, 31);
   color: antiquewhite;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: medium;
 }
 
-
-.Totalbox{
+.Totalbox {
   margin-top: 3%;
-  flex-direction: column;
+  /* flex-direction: column; */
   border: 1px none black;
   border-radius: 30px;
   /* width: 400px; */
-  margin-left: 35.5%;
-  gap: 25px; 
+  /* margin-left: 35.5%; */
+  gap: 25px;
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 1fr); */
   display: flex;
+  flex-wrap: wrap;
+  /* display: wrap; */
 }
 
-.eachBorder{
+.eachBorder {
   background-color: rgb(37, 37, 37);
   border: 2px solid wheat;
   border-radius: 30px;
@@ -31,21 +34,21 @@
   font-size: 20px;
 }
 
-.image{
+.image {
   border: 3px solid WHEAT;
   width: 220px;
   height: 220px;
   border-radius: 30px;
   padding: 10px;
 }
-img{
+img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
 
-#selection{
+#selection {
   width: 150px;
   height: 50px;
   border-radius: 10px;
@@ -56,7 +59,7 @@ img{
   text-align: center;
 }
 
-#selectionDiv{
+#selectionDiv {
   display: flex;
   justify-content: center;
   align-items: center;
