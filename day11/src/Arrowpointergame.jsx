@@ -23,6 +23,7 @@ export function Arrow() {
         x: Math.floor(Math.random() * 28) * 10,
         y: Math.floor(Math.random() * 28) * 10,
       });
+      
     }
     setAte(false);
   }, [Ate]);
@@ -55,21 +56,21 @@ export function Arrow() {
   }, [direction]);
 
   useEffect(() => {
-    let interval = setInterval(() => {
+    const interval = setInterval(() => {
       setPosition((prev) => {
         let { x, y } = prev;
         switch (direction) {
           case 5:
-            y = y <= 0 ? 285 : Math.max(0, y - 10);
+            y = y <= 0 ? 280 : Math.max(0, y - 10);
             break;
           case 2:
-            y = y >= 285 ? 0 : Math.min(285, y + 10);
+            y = y >= 290 ? 0 : Math.min(290, y + 10);
             break;
           case 1:
             x = x <= 0 ? 280 : Math.max(0, x - 10);
             break;
           case 3:
-            x = x >= 285 ? 0 : Math.min(285, x + 10);
+            x = x >= 290 ? 0 : Math.min(290, x + 10);
             break;
           default:
             break;
@@ -118,6 +119,12 @@ export function Arrow() {
         ></div>
       </div>
       <h1>YOUR POINT: {point}</h1>
+          <button onClick={()=>{
+            setPosition({x:0,y:0});
+            setFPosition({ x: 280, y: 280 });
+            setDirection(null);
+          }}>reset</button>
+
     </>
   );
 }
