@@ -1,0 +1,18 @@
+.fullContainer {
+  width: 99vw;
+  min-height: 75vh;
+  background: #262627;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 140px;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+h1{
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
