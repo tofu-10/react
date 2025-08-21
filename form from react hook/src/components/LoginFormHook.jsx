@@ -1,8 +1,10 @@
 import React from 'react'
+import {zodResolver} from "@hookform/resolvers/zod"
 import { useForm } from 'react-hook-form';
+import { loginSchema } from './loginValidation';
 
 export const LoginFormHook = () => {
-const {register, handleSubmit, formState: { errors }} = useForm();
+const {register, handleSubmit, formState: { errors }} = useForm({resolver: zodResolver(loginSchema)});
 
 const onSubmit= (data) => {
   console.log("login data submitted:" , data);
