@@ -13,19 +13,22 @@ function AxiosPost() {
             console.error("error fetching posts:", error);
         })
     },[] )
+
+      const handleDelete = (id) => {
+        setPost(post.filter((post) => post.id !== id));
+      };
+
+
   return (
     <div>
       <h1>Axios Posts</h1>
       <ul>
         {post.map((item) => (
-          <li key={item.id}>
-            {item.title}
-          </li>
+          <li key={item.id}>{item.title}</li>
         ))}
       </ul>
 
-
-      <table style={{border: '1px solid #ccc'}}>
+      <table style={{ border: "1px solid #ccc" }}>
         <thead>
           <tr>
             <th>Id</th>
@@ -33,18 +36,32 @@ function AxiosPost() {
             <th>Title</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           {post.map((item) => (
-            <tr key={item.id} style={{borderBottom: '1px solid #ccc'}}>
-              <td style={{padding: '8px', border: '1px solid #ccc'}}>{item.id}</td>
-              <td style={{padding: '8px', border: '1px solid #ccc'}}>{item.userId}</td>
-              <td style={{padding: '8px', border: '1px solid #ccc'}}>{item.title}</td>
+            <tr key={item.id} style={{ borderBottom: "1px solid #ccc" }}>
+              <td style={{ padding: "8px", border: "1px solid #ccc" }}>
+                {item.id}
+              </td>
+              <td style={{ padding: "8px", border: "1px solid #ccc" }}>
+                {item.userId}
+              </td>
+              <td style={{ padding: "8px", border: "1px solid #ccc" }}>
+                {item.title}
+              </td>
+              <td>
+                <button
+                  style={{ color: "black", boxShadow: "0px 0px 2px 2px" }}
+                  onClick={() => handleDelete(item.id)}
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
 export default AxiosPost

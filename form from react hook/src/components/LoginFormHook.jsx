@@ -9,7 +9,7 @@ const {register, handleSubmit, formState: { errors }} = useForm({resolver: zodRe
 const onSubmit= (data) => {
   console.log("login data submitted:" , data);
 }
-
+  
   return (
     <div>
         <h2>Login Form using React Hook Form</h2>
@@ -19,7 +19,7 @@ const onSubmit= (data) => {
                 <input type="email" {...register("email", { required: "Email is required"})} />
                 {errors.email && 
                     <p style={{ color: 'red' }}>{errors.email.message}</p>
-                }
+                }  
             </div>
             <div style={{ marginBottom: '12px' , border: '1px solid #ccc', padding: '10px'}}>
                 <label htmlFor="password">Password:</label>
