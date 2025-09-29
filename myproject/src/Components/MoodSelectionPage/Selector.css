@@ -7,8 +7,8 @@
 }
 
 .MoodBtn {
-  min-width: 170px;
-  min-height: 120px;
+  width: 270px;
+  height: 120px;
   padding: 1.2rem 1rem 1rem 1rem;
   border-radius: 18px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
@@ -24,44 +24,19 @@
   transition: transform 0.18s, box-shadow 0.18s, filter 0.18s, background 0.18s;
   outline: none;
   border: none;
-  background: #23272f;
 }
 
-.MoodBtn:hover,
-.MoodBtn:focus {
+.MoodBtn:hover{
   transform: scale(1.06) translateY(-4px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   filter: brightness(1.12) saturate(1.08);
-  background: #181a20;
 }
-
-.MoodBtn span:first-child {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.MoodBtn span:nth-child(2) {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-  letter-spacing: 0.5px;
-}
-
-.MoodBtn span:nth-child(3) {
-  font-size: 0.95rem;
-  opacity: 0.92;
-  text-align: center;
-  line-height: 1.3;
-}
-
-@media (max-width: 600px) {
-  .MoodOptions {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .MoodBtn {
-    min-width: 90vw;
-    min-height: 90px;
-    font-size: 1rem;
-  }
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(12px);
+  border: none ;
+  padding: 2rem;
+  color: #fff;
 }

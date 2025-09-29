@@ -1,14 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pacifico&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pacifico&family=Sacramento&family=Stalemate&display=swap');
+
 .hero-section{
-    border: 2px solid black;
+    border: none;
+    /* box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1); */
     padding: 20px;
-    margin: 50px 24vw;
+    margin: 21px 21vw;
     text-align: center;
     align-items: center;
-    width: 45vw;
+    min-width:fit-content;
+    max-height: fit-content;
     position: relative;
     border-radius: 20px;
 }
 .hero-flex{
+    margin: -30px 0;
     display: flex;
     justify-content: center;
+}
+.glass {
+  background: rgba(154, 40, 40, 0.05);
+  border-radius: 18px;
+  margin-left: -20px;
+  position: relative;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: none;
+  color: #fff;
+}
+
+.AnimatedMoodify{
+ font-family: "Stalemate", cursive;
+   /* font-weight: 700; */
+   font-size: 5em;
+  font-style: normal;
+
+}
+
+.Moodify_logo{
+   width: 70px;
+    height: 70px;
+    margin-top: 78px;
+}
+
+.get-started-button{
+  margin-top: 40px;
 }

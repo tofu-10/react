@@ -1,13 +1,13 @@
 import React from 'react'
 import './NavBar.css'
 import { Link } from 'react-router-dom';
-import Copilot_20250831_223416 from "../../assets/Copilot_20250831_223416.png";
+import m from "../../assets/m.png";  
 export const NavBar = () => {
   return (
     <div className="navbar">
-      <img src={Copilot_20250831_223416} alt="Logo" style={{
+      <img src={m} alt="Logo" style={{
         width: '50px',
-        height: '50px'
+        height: '50px',
       }}/>
       <nav className="nav-links">
         <Link to="/">Home</Link>
