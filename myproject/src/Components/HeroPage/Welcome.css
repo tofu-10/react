@@ -1,8 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pacifico&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pacifico&family=Sacramento&family=Stalemate&display=swap');
+
 .welcome-text{
+ font-family: "Stalemate", cursive;
+
       border: 0px solid black;
     padding: 20px;
-    margin: 50px 32.8vw;
+    margin: 90px 34vw;
     text-align: center;
     align-items: center;
-    width: 400px;
+    font-size: 5em;
+     animation: scaleIn 1s ease-in-out forwards;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
