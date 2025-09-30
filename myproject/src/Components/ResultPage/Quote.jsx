@@ -58,15 +58,15 @@ const Quote = ({ mood }) => {
     <div
       className="glass"
       style={{
-        padding: "2rem",
+        padding: "1rem",
         margin: "2rem",
         borderRadius: "20px",
       }}
     >
       <h1
-        style={{
+        style={{  
           textAlign: "center",
-          marginBottom: "1.5rem",
+          marginBottom: "1rem",
           background: "linear-gradient(45deg, #fff, #ccc)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
@@ -88,7 +88,7 @@ const Quote = ({ mood }) => {
       <div
         style={{
           textAlign: "center",
-          marginTop: "1.5rem",
+          marginTop: "2rem",
           fontSize: "0.9rem",
           opacity: 0.7,
         }}
